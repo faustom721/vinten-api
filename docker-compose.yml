@@ -5,15 +5,18 @@ services:
     image: "postgres:11"
     environment:
       - "POSTGRES_HOST_AUTH_METHOD=trust"
+      - POSTGRES_DB=vinten_db
+      - POSTGRES_USER=vinten
+      - POSTGRES_PASSWORD=vinten
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-  web:
+  backend:
     build: .
-    command: python /code/manage.py runserver 0.0.0.0:8000
+    command: python /code/manage.py runserver 0.0.0.0:4300
     volumes:
       - .:/code
     ports:
-      - 8000:8000
+      - 4300:4300
     depends_on:
       - db
 
