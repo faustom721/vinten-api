@@ -24,18 +24,3 @@ class Role(models.Model):
         CustomUser, related_name='roles', on_delete=models.CASCADE)
     role = models.PositiveSmallIntegerField(choices=ROLE_CHOICES)
     activity_description = models.CharField(max_length=150)
-
-
-class ExternalPerson(models.Model):
-    name = models.CharField(max_length=80)
-    identity_document = models.IntegerField(unique=True)
-    name = models.EmailField()
-    phone = models.IntegerField()
-
-
-class Supplier(ExternalPerson):
-    pass
-
-
-class Buyer(ExternalPerson):
-    pass

@@ -25,7 +25,10 @@ SECRET_KEY = 'vgef=rj2s5po^t^oqp8_xd1=gx*&t_h6+2pfb5iy3ei9$n*qeb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+    'localhost'
+]
 
 AUTH_USER_MODEL = 'people.CustomUser'
 
