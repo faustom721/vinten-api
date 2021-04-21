@@ -23,3 +23,9 @@ class Role(models.Model):
     role = models.PositiveSmallIntegerField(choices=ROLE_CHOICES)
     activity_description = models.CharField(
         max_length=150, null=True, blank=True)
+
+    class Meta:
+        unique_together = ('company', 'user')
+
+    def __str__(self):
+        return f'{self.user} - {self.role} - {self.get_company_display()}'
