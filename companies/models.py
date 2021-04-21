@@ -3,9 +3,9 @@ from django.db import models
 
 class Company(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    address = models.CharField(max_length=150)
-    email = models.CharField(max_length=100)
-    phone = models.IntegerField()
+    address = models.CharField(max_length=150, null=True, blank=True)
+    email = models.CharField(max_length=100, null=True, blank=True)
+    phone = models.CharField(max_length=50, null=True, blank=True)
 
 
 class ExternalEntity(models.Model):
@@ -20,7 +20,7 @@ class ExternalEntity(models.Model):
     name = models.CharField(max_length=80)
     identity_document = models.IntegerField(unique=True)
     name = models.EmailField()
-    phone = models.IntegerField()
+    phone = models.CharField(max_length=50, null=True, blank=True)
     kind = models.CharField(max_length=7, choices=KIND_CHOICES, default=PERSON)
 
 
