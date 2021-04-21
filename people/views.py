@@ -7,10 +7,7 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
 
-    # permission_classes = [IsOwnerOrIsValidMethod]
-    # lookup_url_kwarg = 'id'
 
-
-class RoleViewSet(viewsets.ModelViewSet):
+class RoleViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Role.objects.all()
     serializer_class = RoleSerializer
