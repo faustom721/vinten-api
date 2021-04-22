@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from transactions.models import ExternalEntity, Income, Outcome
+from apps.transactions.models import ExternalEntity, Income, Outcome
 
 
 class ExternalEntitySerializer(serializers.ModelSerializer):

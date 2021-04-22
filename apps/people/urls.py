@@ -1,6 +1,6 @@
 from rest_framework.routers import DefaultRouter
 
-from people import views
+from apps.people import views
 
 
 router = DefaultRouter()

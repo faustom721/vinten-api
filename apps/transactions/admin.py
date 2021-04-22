@@ -1,5 +1,5 @@
 from django.contrib import admin
-from transactions.models import *
+from apps.transactions.models import *
 
 
 @admin.register(Sale)

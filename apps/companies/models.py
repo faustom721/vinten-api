@@ -1,6 +1,6 @@
 from django.db import models
-from people.const import ROLE_CHOICES
-from people.models import CustomUser
+from apps.people.const import ROLE_CHOICES
+from apps.people.models import CustomUser
 
 
 class Company(models.Model):

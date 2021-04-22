@@ -16,6 +16,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '0.0.0.0',
+    '127.0.0.1',
     'localhost'
 ]
 
@@ -24,9 +25,9 @@ AUTH_USER_MODEL = 'people.CustomUser'
 # Application definition
 
 INSTALLED_APPS = [
-    'people',
-    'companies',
-    'transactions',
+    'apps.people',
+    'apps.companies',
+    'apps.transactions',
 
     'django.contrib.admin',
     'django.contrib.auth',

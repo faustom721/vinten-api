@@ -1,5 +1,5 @@
 from django.db import models
-from companies.models import Company, Supplier, Buyer, Service
+from apps.companies.models import Company, Supplier, Buyer, Service
 
 
 class Transaction(models.Model):

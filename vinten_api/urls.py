@@ -7,8 +7,8 @@ from rest_framework.routers import DefaultRouter
 
 from rest_framework_simplejwt import views as jwt_views
 
-from people.urls import router as people_router
-from companies.urls import router as companies_router
+from apps.people.urls import router as people_router
+from apps.companies.urls import router as companies_router
 
 admin.site.site_header = "Vinten Admin"
 admin.site.site_title = "Vinten Admin"
