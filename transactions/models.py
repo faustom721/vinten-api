@@ -1,5 +1,5 @@
 from django.db import models
-from companies.models import Company, ExternalEntity, Service
+from companies.models import Company, Supplier, Buyer, Service
 
 
 class Transaction(models.Model):
@@ -17,11 +17,23 @@ class Transaction(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
 
 
-class Outcome(Transaction):
-    payer = models.ForeignKey(Company, on_delete=models.CASCADE)
-    recipient = models.ForeignKey(ExternalEntity, on_delete=models.CASCADE)
+class Purchase(Transaction):
+    """ A purchase the company does """
+    supplier = models.ForeignKey(Buyer, on_delete=models.CASCADE)
 
 
-class Income(Transaction):
-    payer = models.ForeignKey(ExternalEntity, on_delete=models.CASCADE)
-    recipient = models.ForeignKey(Company, on_delete=models.CASCADE)
+class Sale(Transaction):
+    """ A service sale the company does """
+    buyer = models.ForeignKey(Supplier, on_delete=models.CASCADE)
+
+
+class Installment(models.Model):
+    paid = models.BooleanField(default=True)
+    # the limit date to pay the installment
+    expiration_date = models.DateTimeField(null=True, blank=True)
+    # the date the installment has been paid
+    payment_date = models.DateTimeField(null=True, blank=True)
+
+    transaction = models.ForeignKey(
+        Transaction, on_delete=models.CASCADE, related_name='installments')
+    amount = models.DecimalField(max_digits=9, decimal_places=2, default=0)

@@ -2,13 +2,13 @@ from django.contrib import admin
 from transactions.models import *
 
 
-@admin.register(Income)
-class IncomeAdmin(admin.ModelAdmin):
-    list_display = ('payer', 'recipient', 'service', 'reason',
+@admin.register(Sale)
+class SaleAdmin(admin.ModelAdmin):
+    list_display = ('buyer', 'service', 'reason',
                     'amount', 'date_created', 'paid')
 
 
-@admin.register(Outcome)
-class OutComeAdmin(admin.ModelAdmin):
-    list_display = ('payer', 'recipient', 'service', 'reason',
+@admin.register(Purchase)
+class PurchaseAdmin(admin.ModelAdmin):
+    list_display = ('supplier', 'service', 'reason',
                     'amount', 'date_created', 'paid')

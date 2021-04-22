@@ -5,4 +5,3 @@ from people import views
 
 router = DefaultRouter()
 router.register(r'users', views.UserViewSet)
-router.register(r'roles', views.RoleViewSet)
