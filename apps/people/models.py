@@ -5,7 +5,7 @@ from .managers import CustomUserManager
 
 
 class CustomUser(AbstractUser):
-    phone = models.IntegerField(unique=True, null=True)
+    phone = models.IntegerField(null=True)
     ci = models.CharField(max_length=30, unique=True)
 
     USERNAME_FIELD = 'username'

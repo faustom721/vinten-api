@@ -10,14 +10,10 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
-
-    password2 = serializers.CharField(
-        style={'input_type': 'password'}, write_only=True)
-
     class Meta:
         model = CustomUser
-        fields = ['username', 'email', 'first_name', 'last_name',
-                  'password', 'password2', ]
+        fields = ['username', 'ci', 'email', 'first_name', 'last_name',
+                  'password']
         extra_kwargs = {
             'password': {
                 'write_only': True
@@ -25,21 +21,13 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         }
 
     def save(self):
-        user = CustomUser(
-            email=self.validated_data['email'],
-            username=self.validated_data['username'],
-            first_name=self.validated_data['first_name'],
-            last_name=self.validated_data['last_name'],
-            is_tutor=self.validated_data['is_tutor'],
-            is_student=self.validated_data['is_student'],
+        print(self.validated_data.get('ci'))
+        user = CustomUser.objects.create_user(
+            username=self.validated_data.get('username'),
+            ci=self.validated_data.get('ci'),
+            first_name=self.validated_data.get('first_name'),
+            last_name=self.validated_data.get('last_name'),
+            password=self.validated_data.get('password'),
+            email=self.validated_data.get('email'),
+            phone=self.validated_data.get('phone')
         )
-
-        password = self.validated_data['password']
-        password2 = self.validated_data['password2']
-
-        if password != password2:
-            raise serializers.ValidationError(
-                {'password': 'Passwords must match.'})
-        user.set_password(password)
-        user.save()
-        return user
