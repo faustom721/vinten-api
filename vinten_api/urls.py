@@ -4,9 +4,9 @@ from django.conf import settings
 from django.conf.urls import include
 from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
-
 from rest_framework_simplejwt import views as jwt_views
 
+from apps.people.serializers import CustomJWTSerializer
 from apps.people.urls import router as people_router
 from apps.companies.urls import router as companies_router
 
@@ -19,7 +19,7 @@ router = DefaultRouter()
 urlpatterns = [
     path('', admin.site.urls),
 
-    path('token/', jwt_views.TokenObtainPairView.as_view(),
+    path('token/', jwt_views.TokenObtainPairView.as_view(serializer_class=CustomJWTSerializer),
          name='token_obtain_pair'),
     path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 

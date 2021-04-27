@@ -1,4 +1,6 @@
 from rest_framework import serializers
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+
 from apps.people.models import CustomUser
 
 
@@ -31,3 +33,20 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
             email=self.validated_data.get('email'),
             phone=self.validated_data.get('phone')
         )
+
+
+class CustomJWTSerializer(TokenObtainPairSerializer):
+    """ Let the user obtain their token using their username or email in the email field """
+
+    def validate(self, attrs):
+        credentials = {
+            'username': '',
+            'password': attrs.get("password")
+        }
+
+        user_obj = CustomUser.objects.filter(email=attrs.get("username")).first(
+        ) or CustomUser.objects.filter(username=attrs.get("username")).first()
+        if user_obj:
+            credentials['username'] = user_obj.username
+
+        return super().validate(credentials)
