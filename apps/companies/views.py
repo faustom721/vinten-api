@@ -9,7 +9,9 @@ class CompanyViewSet(viewsets.ModelViewSet):
 
 
 class MembershipViewSet(viewsets.ModelViewSet):
-    serializer_class = CompanySerializer
+    """ Works over logged in user's memberships """
+
+    serializer_class = MembershipSerializer
 
     def get_queryset(self):
         user = self.request.user

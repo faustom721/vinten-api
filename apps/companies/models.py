@@ -30,12 +30,13 @@ class Membership(models.Model):
     role = models.PositiveSmallIntegerField(choices=ROLE_CHOICES)
     activity_description = models.CharField(
         max_length=150, null=True, blank=True)
+    active = models.BooleanField(default=True)
 
     class Meta:
         unique_together = ('company', 'user')
 
     def __str__(self):
-        return f'{self.user} - {self.role} - {self.get_company_display()}'
+        return f'{self.user} - {self.get_role_display()} - {self.company}'
 
 
 class ExternalEntity(models.Model):

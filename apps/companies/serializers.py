@@ -6,11 +6,12 @@ class CompanySerializer(serializers.ModelSerializer):
 
     class Meta(object):
         model = Company
-        fields = '__all__'
+        fields = ('name', 'address', 'email', 'phone')
 
 
 class MembershipSerializer(serializers.ModelSerializer):
+    company = CompanySerializer()
 
     class Meta(object):
         model = Membership
-        fields = '__al__'
+        fields = ('role', 'company', 'activity_description')
