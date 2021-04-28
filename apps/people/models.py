@@ -9,6 +9,8 @@ class CustomUser(AbstractUser):
     ci = models.CharField(max_length=30, unique=True)
 
     USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['first_name, last_name',
+                       'email', 'password', 'ci']
 
     objects = CustomUserManager()
 
