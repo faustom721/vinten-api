@@ -1,17 +1,22 @@
 from rest_framework import serializers
 from apps.companies.models import Company, Membership
+from apps.people.serializers import SimpleUserSerializer
 
 
 class CompanySerializer(serializers.ModelSerializer):
 
     class Meta(object):
         model = Company
-        fields = ('name', 'address', 'email', 'phone')
+        fields = ('id', 'name', 'address', 'email', 'phone')
 
 
 class MembershipSerializer(serializers.ModelSerializer):
     company = CompanySerializer()
+    role = serializers.SerializerMethodField()
 
     class Meta(object):
         model = Membership
-        fields = ('role', 'company', 'activity_description')
+        fields = ('role', 'company', 'activity_description', 'user')
+
+    def get_role(self, obj):
+        return obj.get_role_display()

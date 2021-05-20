@@ -1,0 +1,290 @@
+_type: export
+__export_format: 4
+__export_date: 2021-05-20T01:24:35.823Z
+__export_source: insomnia.desktop.app:v2021.3.0
+resources:
+  - _id: req_29fe55f03ca0464387bd1d19c7f9ad1c
+    parentId: fld_c62bd2963fff488b9d422c2bd8e4551a
+    modified: 1621473870090
+    created: 1618881122069
+    url: "{{ _.API_URL }}/me/"
+    name: Get current user
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      prefix: ""
+      token: "{% apitoken '.*(localhost).*/(login)', 'accessToken' %}"
+      disabled: false
+    metaSortKey: -1618976718576
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_c62bd2963fff488b9d422c2bd8e4551a
+    parentId: wrk_056792c6a39e45da8b1c288bec5a201d
+    modified: 1618976738805
+    created: 1618976738805
+    name: Users
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1618976738805
+    _type: request_group
+  - _id: wrk_056792c6a39e45da8b1c288bec5a201d
+    parentId: null
+    modified: 1621375725843
+    created: 1610206556291
+    name: Vinten API
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_772525a99a254e269559f26c4f37e449
+    parentId: fld_c62bd2963fff488b9d422c2bd8e4551a
+    modified: 1621473644820
+    created: 1618976718550
+    url: "{{AccessTokenURL}}"
+    name: Get token
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"username": "fausto@mail.com",
+        	"password": "12345"
+        }
+    parameters: []
+    headers:
+      - name: ""
+        value: ""
+        description: ""
+        id: pair_a0bc271e965f479cb75bfd8b2b0342ab
+      - name: Content-Type
+        value: application/json
+        id: pair_23dbe6a2b9004be3afae50a31ef6d4a1
+    authentication: {}
+    metaSortKey: -1618976718651
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9af4c80a8eb94b3f8c0ab07170e81399
+    parentId: fld_c62bd2963fff488b9d422c2bd8e4551a
+    modified: 1621473853209
+    created: 1618976727000
+    url: "{{ _.API_URL }}/token/refresh/"
+    name: Refresh token
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1618976718601
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_036c3c38bfd14617a609953ceecd65bf
+    parentId: fld_c62bd2963fff488b9d422c2bd8e4551a
+    modified: 1621473859189
+    created: 1619060064107
+    url: "{{ _.API_URL }}/users/"
+    name: Create User
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"username": "fausto3",
+        	"first_name": "Fausto",
+        	"last_name": "Márquez",
+        	"password": "12345",
+        	"ci": "1124",
+        	"email": "fausto3@mail.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_ef6410e375d64daabc92c2381ee8267c
+    authentication:
+      type: bearer
+      prefix: ""
+      token: ""
+      disabled: true
+    metaSortKey: -1618699231444.375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9e3329631101483bb99eab0ffd2022ff
+    parentId: fld_b859b8ccd35f4a7ab410ca5b7de384c2
+    modified: 1621473834004
+    created: 1618977923577
+    url: "{{API_URL}}/memberships/"
+    name: Get my memberships
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      prefix: ""
+      token: "{% apitoken _.AccessTokenURL, 'access' %}"
+      disabled: false
+    metaSortKey: -1618421744312.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_b859b8ccd35f4a7ab410ca5b7de384c2
+    parentId: wrk_056792c6a39e45da8b1c288bec5a201d
+    modified: 1618978243220
+    created: 1618978243220
+    name: Companies
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1618978243220
+    _type: request_group
+  - _id: req_575bdc0db12245f288212c6b6fd0de58
+    parentId: fld_b859b8ccd35f4a7ab410ca5b7de384c2
+    modified: 1621473843456
+    created: 1618978251343
+    url: "{{ _.API_URL }}/companies/"
+    name: Create Company
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "The Second Royal Fuckin Company",
+        	"email": "royalk@fff.com",
+        	"phone": "598838383"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_8334ece6934845a4b4d31d1a12c4e938
+    authentication:
+      type: bearer
+      prefix: ""
+      token: "{% apitoken '.*(localhost).*/(login)', 'accessToken' %}"
+      disabled: false
+    metaSortKey: -1618421744262.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_73f647bc4ed34c418f2ba5a3577856c1
+    parentId: fld_b859b8ccd35f4a7ab410ca5b7de384c2
+    modified: 1621473846247
+    created: 1618978356250
+    url: "{{ _.API_URL }}/companies/1/"
+    name: Get Company
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      prefix: ""
+      token: "{% apitoken '.*(localhost).*/(login)', 'accessToken' %}"
+      disabled: false
+    metaSortKey: -1618329248543.875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_35fe8e54de578a9b299e359486dae31432f5b83a
+    parentId: wrk_056792c6a39e45da8b1c288bec5a201d
+    modified: 1610206556334
+    created: 1610206556334
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1610206556334
+    _type: environment
+  - _id: jar_35fe8e54de578a9b299e359486dae31432f5b83a
+    parentId: wrk_056792c6a39e45da8b1c288bec5a201d
+    modified: 1618881652959
+    created: 1610206556336
+    name: Default Jar
+    cookies:
+      - key: csrftoken
+        value: xLZtZyxqgbzMzvRD4ReV7XVOhTvjq8a1vNtemdBpRnRNkwIvGjtBoUVL6jhU2x5G
+        expires: 2022-04-19T01:20:52.000Z
+        maxAge: 31449600
+        domain: localhost
+        path: /
+        extensions:
+          - SameSite=Lax
+        hostOnly: true
+        creation: 2021-04-20T01:20:52.956Z
+        lastAccessed: 2021-04-20T01:20:52.956Z
+        id: "5463262238351874"
+    _type: cookie_jar
+  - _id: spc_65271f13b1254008a1885da0ac792746
+    parentId: wrk_056792c6a39e45da8b1c288bec5a201d
+    modified: 1610206556298
+    created: 1610206556298
+    fileName: Vinten
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_a9ed2a1a76aa422895681832161e15a4
+    parentId: env_35fe8e54de578a9b299e359486dae31432f5b83a
+    modified: 1621473824638
+    created: 1618881000793
+    name: Development
+    data:
+      API_URL: http://localhost:8000
+      AccessTokenURL: "{{ _.API_URL }}token/"
+    dataPropertyOrder:
+      "&":
+        - API_URL
+        - AccessTokenURL
+    color: null
+    isPrivate: false
+    metaSortKey: 1618881000793
+    _type: environment

@@ -11,6 +11,13 @@ class UserSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class SimpleUserSerializer(serializers.ModelSerializer):
+
+    class Meta(object):
+        model = CustomUser
+        fields = ('first_name', 'last_name', 'username')
+
+
 class UserRegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser

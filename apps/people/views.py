@@ -2,9 +2,10 @@ from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 from django.db import IntegrityError
 from rest_framework.response import Response
+from rest_framework.decorators import action
 
 from apps.people.models import CustomUser
-from apps.people.serializers import UserSerializer, UserRegistrationSerializer
+from apps.people.serializers import UserSerializer, UserRegistrationSerializer, SimpleUserSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -12,7 +13,6 @@ class UserViewSet(viewsets.ModelViewSet):
     permission_classes = [AllowAny]
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
-    serializer_action_classes = {'create': UserRegistrationSerializer}
 
     def create(self, request):
         try:
@@ -23,3 +23,11 @@ class UserViewSet(viewsets.ModelViewSet):
         except IntegrityError as e:
             print(e)
             return Response({'msg': 'username or ci in use'}, 400)
+
+
+class CurrentUserViewSet(viewsets.ReadOnlyModelViewSet):
+    serializer_class = SimpleUserSerializer
+    queryset = CustomUser.objects.all()
+
+    def list(self, request):
+        return Response(self.serializer_class(request.user).data, 200)
