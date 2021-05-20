@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import action
 
 from apps.people.models import CustomUser
-from apps.people.serializers import UserSerializer, UserRegistrationSerializer, SimpleUserSerializer
+from apps.people.serializers import UserSerializer, UserRegistrationSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -26,7 +26,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
 
 class CurrentUserViewSet(viewsets.ReadOnlyModelViewSet):
-    serializer_class = SimpleUserSerializer
+    serializer_class = UserSerializer
     queryset = CustomUser.objects.all()
 
     def list(self, request):

@@ -5,10 +5,17 @@ from apps.people.models import CustomUser
 
 
 class UserSerializer(serializers.ModelSerializer):
+    last_used_company = serializers.SerializerMethodField()
 
     class Meta(object):
         model = CustomUser
         fields = '__all__'
+
+    def get_last_used_company(self, obj):
+        if not obj.last_used_company:
+            return obj.memberships.first().company.pk
+        else:
+            return obj.last_used_company
 
 
 class SimpleUserSerializer(serializers.ModelSerializer):
