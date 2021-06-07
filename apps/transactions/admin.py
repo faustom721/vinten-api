@@ -4,7 +4,7 @@ from apps.transactions.models import *
 
 @admin.register(Sale)
 class SaleAdmin(admin.ModelAdmin):
-    list_display = ('buyer', 'service', 'reason',
+    list_display = ('client', 'service', 'reason',
                     'amount', 'date_created', 'paid')
 
 

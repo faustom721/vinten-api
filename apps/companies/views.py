@@ -1,6 +1,9 @@
+from django.db.models import query
 from rest_framework import viewsets
-from apps.companies.models import Company, Membership
-from apps.companies.serializers import CompanySerializer, MembershipSerializer
+from apps.companies import serializers
+from apps.companies.models import Company, Membership, ExternalEntity
+from apps.companies.serializers import CompanySerializer, MembershipSerializer, ExternalEntitySerializer
+from utils import get_request_company
 
 
 class CompanyViewSet(viewsets.ModelViewSet):
@@ -15,3 +18,13 @@ class MembershipViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return Membership.objects.filter(user=self.request.user, active=True)
+
+
+class ClientViewSet(viewsets.ModelViewSet):
+    """ Logged in user's company's clients """
+
+    serializer_class = ExternalEntitySerializer
+
+    def get_queryset(self):
+        company = get_request_company(self.request)
+        return Membership.objects.filter(user=self.request.user)

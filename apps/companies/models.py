@@ -1,6 +1,5 @@
 from django.db import models
 from apps.people.const import ROLE_CHOICES
-from apps.people.models import CustomUser
 
 
 class Company(models.Model):
@@ -10,7 +9,7 @@ class Company(models.Model):
     phone = models.CharField(max_length=50, null=True, blank=True)
 
     members = models.ManyToManyField(
-        CustomUser, through='Membership')
+        'people.CustomUser', through='Membership')
 
     active = models.BooleanField(default=True)
 
@@ -25,7 +24,7 @@ class Membership(models.Model):
     company = models.ForeignKey(
         Company, on_delete=models.CASCADE)
     user = models.ForeignKey(
-        CustomUser, related_name='memberships', on_delete=models.CASCADE)
+        'people.CustomUser', related_name='memberships', on_delete=models.CASCADE)
 
     role = models.PositiveSmallIntegerField(choices=ROLE_CHOICES)
     activity_description = models.CharField(
@@ -62,11 +61,13 @@ class ExternalEntity(models.Model):
 
 
 class Supplier(ExternalEntity):
-    pass
+    company = models.ForeignKey(
+        Company, related_name='suppliers', on_delete=models.CASCADE)
 
 
-class Buyer(ExternalEntity):
-    pass
+class Client(ExternalEntity):
+    company = models.ForeignKey(
+        Company, related_name='clients', on_delete=models.CASCADE)
 
 
 class Service(models.Model):

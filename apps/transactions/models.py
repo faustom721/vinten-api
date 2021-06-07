@@ -1,5 +1,5 @@
 from django.db import models
-from apps.companies.models import Company, Supplier, Buyer, Service
+from apps.companies.models import Company, Supplier, Client, Service
 
 
 class Transaction(models.Model):
@@ -19,12 +19,12 @@ class Transaction(models.Model):
 
 class Purchase(Transaction):
     """ A purchase the company does """
-    supplier = models.ForeignKey(Buyer, on_delete=models.CASCADE)
+    supplier = models.ForeignKey(Client, on_delete=models.CASCADE)
 
 
 class Sale(Transaction):
     """ A service sale the company does """
-    buyer = models.ForeignKey(Supplier, on_delete=models.CASCADE)
+    client = models.ForeignKey(Supplier, on_delete=models.CASCADE)
 
 
 class Installment(models.Model):

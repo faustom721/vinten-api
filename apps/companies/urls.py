@@ -7,3 +7,4 @@ router = DefaultRouter()
 router.register(r'companies', views.CompanyViewSet)
 router.register(r'memberships', views.MembershipViewSet,
                 basename='memberships')
+router.register(r'clients', views.ClientViewSet, basename='clients')
