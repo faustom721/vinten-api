@@ -1,0 +1,1844 @@
+_type: export
+__export_format: 4
+__export_date: 2021-06-10T15:54:39.710Z
+__export_source: insomnia.desktop.app:v2021.3.0
+resources:
+  - _id: req_c37b655d8e3a4e12bf4053b7a284ae12
+    parentId: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    modified: 1623071649409
+    created: 1585239935875
+    url: 0.0.0.0:5555/account/login/
+    name: login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "proficient_test@doctari.com",
+        	"password": "Doctari123",
+        	"doctors_client": true
+        }
+    parameters: []
+    headers:
+      - id: pair_63e485ca5b2245e796ca4595be89cdd2
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1623070689826
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    parentId: null
+    modified: 1620826168757
+    created: 1584629408255
+    name: Doctari API
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_fe1253308eef41c4aef3abed7ce1984a
+    parentId: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    modified: 1621888142416
+    created: 1616486519071
+    url: https://api.mercadopago.com/v1/payments/1236079041
+    name: MercadoPago payment info
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: Authorization
+        value: Bearer
+          APP_USR-2701860213632646-011600-d4952de88c20b009f6d28b7fd2deb403-450782405
+        description: ""
+        id: pair_c4d2d65c818649468fa9dea040aee8fe
+        disabled: true
+      - name: Authorization
+        value: Bearer YL77GyuoxYiD2N0bolLmVk5L9GJ4TnDy
+        description: ""
+        id: pair_2d645afa8a074dc688bcdde20944dc18
+        disabled: false
+    authentication: {}
+    metaSortKey: -1616486519071
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_cb1f5f44153c44349a31f31880c9fcfb
+    parentId: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    modified: 1618773806702
+    created: 1618773589842
+    url: https://api.mercadopago.com/v1/payment_methods/installments
+    name: MercadoPago issuer_id
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - name: public_key
+        value: TEST-0a1e624d-69c7-4a7f-bf72-a9d718b5b7af
+        description: ""
+        id: pair_fa83f69056734d7c9bca8e0d2f9d361b
+      - name: bin
+        value: "455110"
+        description: ""
+        id: pair_b894f3333dd54e02821176cd96bf0eb1
+        disabled: false
+    headers:
+      - name: Authorization
+        value: Bearer
+          APP_USR-2701860213632646-011600-d4952de88c20b009f6d28b7fd2deb403-450782405
+        description: ""
+        id: pair_c4d2d65c818649468fa9dea040aee8fe
+    authentication: {}
+    metaSortKey: -1615644913316
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_c0503cb5a3814c719c2739d9441d0f73
+    parentId: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    modified: 1619178695775
+    created: 1619178635117
+    url: https://api.mercadopago.com/v1/payments/1236079041/refunds
+    name: MercadoPago refund
+    description: ""
+    method: POST
+    body: {}
+    parameters: []
+    headers:
+      - name: Authorization
+        value: Bearer
+          APP_USR-2701860213632646-011600-d4952de88c20b009f6d28b7fd2deb403-450782405
+        description: ""
+        id: pair_c4d2d65c818649468fa9dea040aee8fe
+        disabled: true
+      - name: Authorization
+        value: Bearer
+          TEST-4463707443870553-021913-92ede768fca0143cbfbeb5077fa8fbd1-84921452
+        description: ""
+        id: pair_2d645afa8a074dc688bcdde20944dc18
+    authentication: {}
+    metaSortKey: -1616065716193.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6fb73054b7bf4140955c71ecb7736a58
+    parentId: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    modified: 1619178768953
+    created: 1619178757041
+    url: https://api.mercadopago.com/v1/refunds
+    name: MercadoPago all refunds
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: Authorization
+        value: Bearer
+          APP_USR-2701860213632646-011600-d4952de88c20b009f6d28b7fd2deb403-450782405
+        description: ""
+        id: pair_c4d2d65c818649468fa9dea040aee8fe
+        disabled: true
+      - name: Authorization
+        value: Bearer
+          TEST-4463707443870553-021913-92ede768fca0143cbfbeb5077fa8fbd1-84921452
+        description: ""
+        id: pair_2d645afa8a074dc688bcdde20944dc18
+    authentication: {}
+    metaSortKey: -1615855314754.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_590d83ab154f40b5acec730a16672a3b
+    parentId: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    modified: 1622237205460
+    created: 1622237167932
+    url: https://backend-b2c.doctari.com/v5/person/1711
+    name: get person
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: Authorization
+        value: JWT
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inl2aXRhbGVAZ2xvYmFsdXkuY29tIiwib3JpZ19pYXQiOjE2MjIyMzE5MzAsInVzZXJfaWQiOjE3MTEsImVtYWlsIjoieXZpdGFsZUBnbG9iYWx1eS5jb20iLCJleHAiOjE2MjIyNDA2NTN9.wmG5ye8krb-cW0EHGayxD1KwLwDe-na2n1e92XE1PkM
+        description: ""
+        id: pair_5bb1e024646a4e448efdd9a46b69c9eb
+        disabled: false
+    authentication: {}
+    metaSortKey: -1622237167932
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_3fad1b222b594b1dbcfe51c9f87cce55
+    parentId: fld_732cdd7c22a84d349bce6562cf1f7e39
+    modified: 1587742210642
+    created: 1586462657137
+    url: 0.0.0.0:5555/integration/appointment/15222
+    name: delete appointment
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+    authentication: {}
+    metaSortKey: -1586531341071
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_732cdd7c22a84d349bce6562cf1f7e39
+    parentId: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    modified: 1589390714476
+    created: 1586531341071
+    name: integration
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1585144356887
+    _type: request_group
+  - _id: req_b6f25079f5134877a246948bf22df5d9
+    parentId: fld_732cdd7c22a84d349bce6562cf1f7e39
+    modified: 1587741593517
+    created: 1586531373245
+    url: 0.0.0.0:5555/integration/appointment
+    name: get appointment
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters:
+      - description: ""
+        id: pair_ad028c1acdfe485e929df98ad92ed085
+        name: patient_identity
+        value: "20347592"
+      - description: ""
+        id: pair_551ab13b9479403e99d044d021162301
+        name: doctor_identity
+        value: "93142831"
+      - description: ""
+        disabled: true
+        id: pair_edac352af43743aaa4dcd0e693011a0f
+        name: date_start
+        value: 2020-04-10
+      - description: ""
+        disabled: true
+        id: pair_d3cc0395c92648519176bde9280e8179
+        name: date_period
+        value: "4"
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+    authentication: {}
+    metaSortKey: -1586531341146
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_3cf851710bef4d27acc303bed72b9725
+    parentId: fld_732cdd7c22a84d349bce6562cf1f7e39
+    modified: 1589390822300
+    created: 1589311925376
+    url: 0.0.0.0:5555/integration/appointment/
+    name: create appointment
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        	{
+        		"reason": "prueba",
+        		"date": "2020-05-13 12:44",
+        		"doctor_identity": 93142831,
+        		"patient_identity": 20347592
+        	}
+    parameters: []
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+    authentication: {}
+    metaSortKey: -1586531341108.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_0923868a3cf04378a038f49182e014ca
+    parentId: fld_25cc1da8b4c3431b88d7409ffc7cb3dd
+    modified: 1591630235442
+    created: 1588953479349
+    url: 0.0.0.0:5555/asse/confirm_agenda/
+    name: confirm_agenda
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        	{
+        		"id": 5166,
+        		"type": "video",
+        		"call_campaign_name": "CitaVideoconsulta->",
+        		"patient_callerID": "098846182",
+        		"patient_document": "12345678"
+        	}
+    parameters: []
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+    authentication: {}
+    metaSortKey: -1586531341096
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_25cc1da8b4c3431b88d7409ffc7cb3dd
+    parentId: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    modified: 1589390720856
+    created: 1588771423933
+    name: ASSE
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1585144356899.5
+    _type: request_group
+  - _id: req_c152297cc4ce42ff97bef46e272dd534
+    parentId: fld_25cc1da8b4c3431b88d7409ffc7cb3dd
+    modified: 1590091891525
+    created: 1589831010446
+    url: 0.0.0.0:5555/appointment_form/16177
+    name: get appointment form
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: JWT
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRvYzFAZG9jdGFyaS5jb20iLCJ1c2VyX2lkIjoyODE2MzQsImVtYWlsIjoiZG9jMUBkb2N0YXJpLmNvbSIsImV4cCI6MTU4OTgzMTQ0MX0.5zu06Oj0_LHgIZAH6LXWky1pd6nMRKlTfwT_eGbdYu8
+    authentication: {}
+    metaSortKey: -1586531341083.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_555832c5a65d4ac584746b991d02db09
+    parentId: fld_25cc1da8b4c3431b88d7409ffc7cb3dd
+    modified: 1591646826830
+    created: 1589905485375
+    url: backend-testasse.doctari.com/asse/get_agenda/
+    name: get_agenda
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+      - description: ""
+        disabled: true
+        id: pair_6d0e878c042741b096ebc77ae2e658a2
+        name: Authorization
+        value: JWT
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRvYzFAZG9jdGFyaS5jb20iLCJ1c2VyX2lkIjoyODE2MzQsImVtYWlsIjoiZG9jMUBkb2N0YXJpLmNvbSIsImV4cCI6MTU4OTgzMTQ0MX0.5zu06Oj0_LHgIZAH6LXWky1pd6nMRKlTfwT_eGbdYu8
+    authentication: {}
+    metaSortKey: -1586531341146
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d83d1fc3bd6c43cc871e2b6821b0c1ab
+    parentId: fld_25cc1da8b4c3431b88d7409ffc7cb3dd
+    modified: 1591297085254
+    created: 1589984462810
+    url: 0.0.0.0:5555/appointments/16285/
+    name: get appointment
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters:
+      - id: pair_4f77f0e4224e44baa6b3c06fb31eb6af
+        name: room_code
+        value: "218"
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: true
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+      - description: ""
+        disabled: false
+        id: pair_4c8247c86e4944f6861146254778f2d5
+        name: Authorization
+        value: JWT
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRvYzFAZG9jdGFyaS5jb20iLCJ1c2VyX2lkIjoyODE2MzQsImVtYWlsIjoiZG9jMUBkb2N0YXJpLmNvbSIsImV4cCI6MTU4OTgzMTQ0MX0.5zu06Oj0_LHgIZAH6LXWky1pd6nMRKlTfwT_eGbdYu8
+    authentication: {}
+    metaSortKey: -1586531341092.875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_65e656d5f3964217a386644c5182759d
+    parentId: fld_25cc1da8b4c3431b88d7409ffc7cb3dd
+    modified: 1615558933343
+    created: 1590169429719
+    url: "{{ _.ASE_API }}/asse/new_form/"
+    name: new_form
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+    authentication: {}
+    metaSortKey: -1586531341196
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6582f25905be4f96aee8f2713883b1b4
+    parentId: fld_25cc1da8b4c3431b88d7409ffc7cb3dd
+    modified: 1591114310873
+    created: 1590435038493
+    url: 0.0.0.0:5555/appointments/16249/doctor_close/
+    name: doctor_close
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"appointment_form": {
+        	"address": "asdrrrrr",
+        	"age": 15,
+        	"anxiety_symptoms": "normal",
+        	"behavioral_symptoms": "normal",
+        	"coexistence_problems": "normal",
+        	"covid19_discharged": false,
+        	"covid19_infected": false,
+        	"department": "montevideo",
+        	"depression_symptoms": "normal",
+        	"drugs_alcohol_consumption": "normal",
+        	"economic_problems": "normal",
+        	"fear_covid19": "normal",
+        	"first_name": "juan",
+        	"gender": "F",
+        	"health_care_access_problems": "normal",
+        	"health_provider": "",
+        	"labor_study_problems": "normal",
+        	"last_name": "rodriguez",
+        	"lonely_feeling": "normal",
+        	"mental_health_care_access_problems": "normal",
+        	"mental_health_treatment": false,
+        	"others": "normal",
+        	"phone": "09314189",
+        	"psychological_attention": false,
+        	"psychotropic_drugs_tratment": false,
+        	"reexacerbation_previous_mental_problems": "normal",
+        	"roommate_covid19_discharged": false,
+        	"roommate_covid19_infected": false,
+        	"roommates": 2,
+        	"suicide_ideas": "normal",
+        	"violence_abuse_situations": "normal",
+        	"health_provider": "sdfs",
+        	"relationship": "hermanastro"
+        	},
+        	"doctor_info": {
+        		"doctor_name":"pepe",
+        		"doctor_user":"suarez"
+        	}
+        }
+    parameters: []
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: true
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+      - description: ""
+        id: pair_6d0e878c042741b096ebc77ae2e658a2
+        name: Authorization
+        value: JWT
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRvYzFAZG9jdGFyaS5jb20iLCJ1c2VyX2lkIjoyODE2MzQsImVtYWlsIjoiZG9jMUBkb2N0YXJpLmNvbSIsImV4cCI6MTU4OTgzMTQ0MX0.5zu06Oj0_LHgIZAH6LXWky1pd6nMRKlTfwT_eGbdYu8
+    authentication: {}
+    metaSortKey: -1586531341089.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6a0dbe50898e4c9aaa9561acfae7cd82
+    parentId: fld_25cc1da8b4c3431b88d7409ffc7cb3dd
+    modified: 1591114281409
+    created: 1591113310567
+    url: 0.0.0.0:5555/appointments/save_form/16249/
+    name: patch appointmentForm
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"address": "asdrrrrr",
+        	"age": 15,
+        	"anxiety_symptoms": "normal",
+        	"behavioral_symptoms": "normal",
+        	"coexistence_problems": "normal",
+        	"covid19_discharged": false,
+        	"covid19_infected": false,
+        	"department": "montevideo",
+        	"depression_symptoms": "normal",
+        	"drugs_alcohol_consumption": "normal",
+        	"economic_problems": "normal",
+        	"fear_covid19": "normal",
+        	"first_name": "juan",
+        	"gender": "F",
+        	"health_care_access_problems": "normal",
+        	"health_provider": "",
+        	"labor_study_problems": "normal",
+        	"last_name": "rodriguez",
+        	"lonely_feeling": "normal",
+        	"mental_health_care_access_problems": "normal",
+        	"mental_health_treatment": false,
+        	"others": "normal",
+        	"phone": "09314189",
+        	"psychological_attention": false,
+        	"psychotropic_drugs_tratment": false,
+        	"reexacerbation_previous_mental_problems": "normal",
+        	"roommate_covid19_discharged": false,
+        	"roommate_covid19_infected": false,
+        	"roommates": 2,
+        	"suicide_ideas": "normal",
+        	"violence_abuse_situations": "normal",
+        	"health_provider": "sdfs",
+        	"relationship": "madre"
+        	}
+    parameters: []
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: JWT
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRvYzFAZG9jdGFyaS5jb20iLCJ1c2VyX2lkIjoyODE2MzQsImVtYWlsIjoiZG9jMUBkb2N0YXJpLmNvbSIsImV4cCI6MTU4OTgzMTQ0MX0.5zu06Oj0_LHgIZAH6LXWky1pd6nMRKlTfwT_eGbdYu8
+    authentication: {}
+    metaSortKey: -1586531341081.9375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_c44f6168a5784404b33b46ba99e79885
+    parentId: fld_25cc1da8b4c3431b88d7409ffc7cb3dd
+    modified: 1591195769049
+    created: 1591185599931
+    url: https://isbelpublic.ucontactcloud.com:7443/Integra/resources/auth/UserLogin
+    name: get token Isbel
+    description: ""
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_be7f51e8d89548d3bff235e28c788baa
+          name: user
+          value: doctari
+        - description: ""
+          id: pair_0e6b06ead962490ca41959f93131c1fb
+          name: password
+          value: doctari123
+        - description: ""
+          disabled: true
+          id: pair_ec05305f92284fc785c7977a27fa2812
+          name: ""
+          value: ""
+    parameters:
+      - description: ""
+        id: pair_bb1fb0b5e929479a859c04e4a9005b7c
+        name: ""
+        value: ""
+    headers:
+      - description: ""
+        id: pair_e9f175a10411426eb953badce0c0e28b
+        name: Content-Type
+        value: application/x-www-form-urlencoded
+    authentication: {}
+    metaSortKey: -1591185599931
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_aaeedca480ff4a7a8e7e55c568a436b9
+    parentId: fld_25cc1da8b4c3431b88d7409ffc7cb3dd
+    modified: 1591201013872
+    created: 1591200960631
+    url: 0.0.0.0:5555/asse/test/
+    name: test
+    description: ""
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - id: pair_be7f51e8d89548d3bff235e28c788baa
+          name: user
+          value: doctari
+        - description: ""
+          id: pair_0e6b06ead962490ca41959f93131c1fb
+          name: password
+          value: doctari123
+        - description: ""
+          disabled: true
+          id: pair_ec05305f92284fc785c7977a27fa2812
+          name: ""
+          value: ""
+    parameters:
+      - description: ""
+        id: pair_bb1fb0b5e929479a859c04e4a9005b7c
+        name: ""
+        value: ""
+    headers:
+      - description: ""
+        id: pair_e9f175a10411426eb953badce0c0e28b
+        name: Content-Type
+        value: application/x-www-form-urlencoded
+      - description: ""
+        id: pair_cf3f4931befe450a83a616582316ed5d
+        name: Authorization
+        value: JWT
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRvYzFAZG9jdGFyaS5jb20iLCJ1c2VyX2lkIjoyODE2MzQsImVtYWlsIjoiZG9jMUBkb2N0YXJpLmNvbSIsImV4cCI6MTU4OTgzMTQ0MX0.5zu06Oj0_LHgIZAH6LXWky1pd6nMRKlTfwT_eGbdYu8
+    authentication: {}
+    metaSortKey: -1591082578913
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a78d4390d9b14a35bbb4e3b31ae3b534
+    parentId: fld_2fae668ffba2401d9399dcb54b6e6c99
+    modified: 1613064755535
+    created: 1585157408816
+    url: https://backend-casmu.doctari.com/v5/casmu/get_token/
+    name: get token
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"multiple_users": true,
+        	"users": [
+        		{
+        			"identity_document": 	47361273
+        		},
+        		{
+        			"identity_document": 	138,
+        			"doctor": false
+        		}
+        	]
+        }
+    parameters: []
+    headers:
+      - id: pair_5139faead2cb4e5ab863cf695781de06
+        name: Content-Type
+        value: application/json
+      - description: ""
+        id: pair_ecf104a69cda418880544ae12876e798
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+    authentication: {}
+    metaSortKey: -1586531341271
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_2fae668ffba2401d9399dcb54b6e6c99
+    parentId: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    modified: 1589390702194
+    created: 1589311904235
+    name: Casmu
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1585144356912
+    _type: request_group
+  - _id: req_3dcebd3b3e704deabb302b05f13d772c
+    parentId: fld_2fae668ffba2401d9399dcb54b6e6c99
+    modified: 1622644306725
+    created: 1585681069385
+    url: "{{ _.CASMU_API_TEST }}/casmu/appointment/"
+    name: create appointment
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        	{
+        		"reason": "prueba cámara",
+        		"date": "2021-06-02 11:40",
+        		"doctor_identity": 93142831,
+        		"patient_identity": 20347592
+        	}
+    parameters: []
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+    authentication: {}
+    metaSortKey: -1586531341121
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_da83349b8c984a50aa8fc9a0eead9590
+    parentId: fld_2fae668ffba2401d9399dcb54b6e6c99
+    modified: 1590077028996
+    created: 1588173205498
+    url: 0.0.0.0:5555/v5/casmu/register_patient/
+    name: create patient
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"multiple_users": true,
+        	"users": [
+        		{
+        			"first_name": "paciente",
+        			"last_name": "servicio",
+        			"identity_document": 162,
+        			"birth_date": "1995-04-22"
+        		}
+        	]
+        }
+    parameters: []
+    headers:
+      - id: pair_44e14d712ac245a1831065563d6a62cf
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1586531341146
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_8a8c012c88624921b4fe66c3afe6ca4a
+    parentId: fld_2fae668ffba2401d9399dcb54b6e6c99
+    modified: 1590077030851
+    created: 1588601443561
+    url: 0.0.0.0:5555/v5/casmu/register_doctor/
+    name: create doctor
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"multiple_users": true,
+        	"users": [
+        		{
+        			"first_name": "doctor",
+        			"last_name": "servico",
+        			"identity_document": 151,
+        			"birth_date": "1995-04-22",
+        			"email": "test6@check.com"
+        		}
+        	]	11014884800001
+        }
+    parameters: []
+    headers:
+      - id: pair_44e14d712ac245a1831065563d6a62cf
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1586531341133.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a75cc5139f7545abb113eacc71ef41c2
+    parentId: fld_2fae668ffba2401d9399dcb54b6e6c99
+    modified: 1611669766848
+    created: 1589211631451
+    url: https://orqprep.casmu.com/casmucerca-v2/oauth/access_token
+    name: casmu api token
+    description: ""
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - description: ""
+          id: pair_6ca01f9d7b294e77af198f7c3bc82f56
+          name: grant_type
+          value: password
+        - description: ""
+          id: pair_77abc24a8e9644fe9cb19c70dc2fcc45
+          name: Scope
+          value: FullControl
+        - description: ""
+          id: pair_440a56033c0147fdb728b9cdda48a704
+          name: Username
+          value: doctari
+        - description: ""
+          id: pair_975fc8e99acb4488babe57836ae427d6
+          name: Password
+          value: pdoctari
+        - description: ""
+          id: pair_ba1572720bb945f1b84e4b8052f0e2a2
+          name: client_id
+          value: 61920d5481044ec2ba40c241c4406ffe
+        - description: ""
+          id: pair_14271ea3d1cd450888d46cf0374df0a6
+          name: client_secret
+          value: 9b67a07fe5494f57a462b046f9fe7416
+    parameters: []
+    headers:
+      - id: pair_1e4bae40eda541ceb7e9172af28b8f6b
+        name: Content-Type
+        value: application/x-www-form-urlencoded
+    authentication: {}
+    metaSortKey: -1586531341171
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2464206da72549f2914acb8541e3edea
+    parentId: fld_2fae668ffba2401d9399dcb54b6e6c99
+    modified: 1589390481979
+    created: 1589308986242
+    url: https://orqdesa.casmu.com/appmovil/rest/dp_casmu
+    name: casmu start doctor
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - description: ""
+        id: pair_59df74d7106e4df786bdade2643f434a
+        multiline: text/plain
+        name: SDTParamCollectionStr
+        type: text
+        value: '[{"Campo":"Action","Valor":"DoctariEvtEnConsulta"},{"Campo":"doctariAppointmentId","Valor":21},{"Campo":"doctariAppointmentEvent","Valor":"doctorStartAppointment"},{"Campo":"doctariEventDateTime","Valor":"2020-05-04
+          12:30"}]'
+    headers:
+      - description: ""
+        id: pair_96a723f5e40c43e78e3f055018e3a2fc
+        name: Content-Type
+        value: application/json
+      - description: ""
+        id: pair_06d75de779184daab06c6fd32d49adb9
+        name: Authorization
+        value: OAuth
+          052df217-27bf-4e18-9b68-740d34eae267!6258c4b8187ed48775900bc94f4de4f67edeba4d00f736e9ae2e1558d5e5d38ef6f18d7adabdb9
+      - description: ""
+        id: pair_db69b615d6644ef9818a50407e486bd5
+        name: GENEXUS-AGENT
+        value: application/x-www-form-urlencoded
+    authentication: {}
+    metaSortKey: -1586531341221
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_50d0572011ee4699831b46b270cb9bf4
+    parentId: fld_2fae668ffba2401d9399dcb54b6e6c99
+    modified: 1612204447052
+    created: 1611582623098
+    url: https://orqprep.casmu.com/casmucerca-v2/rest/dp_casmu
+    name: casmu patient cancel
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - description: ""
+        id: pair_59df74d7106e4df786bdade2643f434a
+        multiline: text/plain
+        name: SDTParamCollectionStr
+        type: text
+        value: >
+          [{"Campo":"Action","Valor":"DoctariEvtEnConsulta"},{"Campo":"doctariAppointmentEvent","Valor":"patientCancelAppointment"},{"Campo":"doctariEventDateTime","Valor":"2021-01-25
+          12:30"},
+
+          {"Campo":"doctariPatientIdentity","Valor":"123455666"}]
+    headers:
+      - description: ""
+        id: pair_96a723f5e40c43e78e3f055018e3a2fc
+        name: Content-Type
+        value: application/json
+      - description: ""
+        id: pair_06d75de779184daab06c6fd32d49adb9
+        name: Authorization
+        value: OAuth
+          052df217-27bf-4e18-9b68-740d34eae267!c57ff30dfbb3aa4020447c6b2294eaf9dd4fb5111965a59bec740e540c869d8bb4e0fc3ceb2872
+      - description: ""
+        id: pair_db69b615d6644ef9818a50407e486bd5
+        name: GENEXUS-AGENT
+        value: application/x-www-form-urlencoded
+    authentication: {}
+    metaSortKey: -1586531341208.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9b0aed7738bb4ef784c1c7d01c1cfd6c
+    parentId: fld_2fae668ffba2401d9399dcb54b6e6c99
+    modified: 1620142340412
+    created: 1613496610038
+    url: "{{ _.CASMU_API_TEST
+      }}/casmu/rapid_appointment/checkin_authorized/20347592/"
+    name: checkin authorized
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters:
+      - name: amount
+        value: "15"
+        description: ""
+        id: pair_f1718752dcfa4d9baca7b1503f48bcc5
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+    authentication: {}
+    metaSortKey: -1586531341114.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_fae841d68bdc4b2686521c6d0e2bfa05
+    parentId: fld_2fae668ffba2401d9399dcb54b6e6c99
+    modified: 1619455874730
+    created: 1613570822279
+    url: "{{ _.DEV_API }}/casmu/rapid_appointment/checkin_request/20347592/"
+    name: checkin request
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+    authentication: {}
+    metaSortKey: -1586531341111.625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_88d4c1d714064ae1b868d9c261d98dd2
+    parentId: fld_2fae668ffba2401d9399dcb54b6e6c99
+    modified: 1613574889460
+    created: 1613574883459
+    url: localhost:5555/casmu/rapid_appointment/queue/
+    name: queue snapshot
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+    authentication: {}
+    metaSortKey: -1586531341110.0625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_475817dc6bb84762af3c15c862b24414
+    parentId: fld_2fae668ffba2401d9399dcb54b6e6c99
+    modified: 1613575436513
+    created: 1613575190180
+    url: localhost:5555/waiting_room/patients_in_queue/
+    name: patients in queue
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: JWT
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRvY3RvckBwcnVlYmEuY29tIiwib3JpZ19pYXQiOjE2MTM1NzUzMTgsInVzZXJfaWQiOjExMSwiZW1haWwiOiJkb2N0b3JAcHJ1ZWJhLmNvbSIsImV4cCI6MTYxMzU3ODkxOH0.ggBFEQo6vlX8sLDRoMPzS3cPwwa7kVHH2udTUda0ORM
+    authentication: {}
+    metaSortKey: -1586531341109.2812
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_cd2db10e62d34b9fab785caea6d9086c
+    parentId: fld_2fae668ffba2401d9399dcb54b6e6c99
+    modified: 1619455856799
+    created: 1613576684983
+    url: "{{ _.DEV_API }}/casmu/rapid_appointment/delete_queue/"
+    name: clear queue
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+    authentication: {}
+    metaSortKey: -1586531341109.6719
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_cb61e156f6ab4f029ecad7bd2f39399f
+    parentId: fld_2fae668ffba2401d9399dcb54b6e6c99
+    modified: 1616009719777
+    created: 1616009700780
+    url: "{{ _.DEV_API }}/casmu/doctor_online/"
+    name: doctor online
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+    authentication: {}
+    metaSortKey: -1586531341117.875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5f3bf91f85e54823983992ad5ef712fd
+    parentId: fld_2fae668ffba2401d9399dcb54b6e6c99
+    modified: 1616773330077
+    created: 1616768673862
+    url: 0.0.0.0:5555/appointments/17167
+    name: get appointments
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - description: ""
+        id: pair_bace9cb42c504579983964a2741f8ad3
+        name: assistant_id
+        value: ""
+        disabled: true
+    headers:
+      - description: ""
+        id: pair_6e0549db0f9e4135bd1f41e79b78a529
+        name: Authorization
+        value: JWT
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRvY3RvckBwcnVlYmEuY29tIiwib3JpZ19pYXQiOjE2MTY3NzI3ODMsInVzZXJfaWQiOjExMSwiZW1haWwiOiJkb2N0b3JAcHJ1ZWJhLmNvbSIsImV4cCI6MTYxNjc3NjM4M30.J40FTJ9Ja9zE5HaeeUxKMCjAhzhmz-4v81klMCaBHVo
+    authentication: {}
+    metaSortKey: -1586531341321
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_3eaaad5b8ad24a4fb247424d49dcccb3
+    parentId: fld_2fae668ffba2401d9399dcb54b6e6c99
+    modified: 1618586422180
+    created: 1618497949869
+    url: "{{ _.CASMU_API_TEST }}/casmu/rapid_appointment/checkin_cancel/20347592/"
+    name: checkin cancel
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+    authentication: {}
+    metaSortKey: -1586531341113.1875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e728440ae083432eb33f665e4e78374d
+    parentId: fld_75edd8e76aec4e91822ee8796bc6eca5
+    modified: 1590077062522
+    created: 1584717846129
+    url: http://recetas.grupobasa.com.ar/api/padron/20347592/
+    name: BASA verify
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1588843869486.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_75edd8e76aec4e91822ee8796bc6eca5
+    parentId: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    modified: 1590077040278
+    created: 1590077040278
+    name: BASA
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1590077040278
+    _type: request_group
+  - _id: req_a9dce4cf6f7746499c33d8c3b35c8b86
+    parentId: fld_75edd8e76aec4e91822ee8796bc6eca5
+    modified: 1590077060936
+    created: 1586977138481
+    url: 0.0.0.0:5555/appointments
+    name: get appointments
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - description: ""
+        id: pair_bace9cb42c504579983964a2741f8ad3
+        name: assistant_id
+        value: ""
+    headers:
+      - description: ""
+        id: pair_6e0549db0f9e4135bd1f41e79b78a529
+        name: Authorization
+        value: JWT
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZtYXJxdWV6QGdsb2JhbHV5LmNvbSIsIm9yaWdfaWF0IjoxNTg2OTc3MjEzLCJ1c2VyX2lkIjozMzksImVtYWlsIjoiZm1hcnF1ZXpAZ2xvYmFsdXkuY29tIiwiZXhwIjoxNTg2OTgwODEzfQ.wkXazYosyCQVHglbm7yV2XGgi4K-KYRFI0qE52W9Odk
+    authentication: {}
+    metaSortKey: -1588843869436.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_57200edb279241268489b95b0db81465
+    parentId: fld_75edd8e76aec4e91822ee8796bc6eca5
+    modified: 1590785291812
+    created: 1590762489604
+    url: 0.0.0.0:5555/person/all?page=1&search=123123
+    name: all patients
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1588843869461.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_8d99f484b533417e9f0b9624349456c6
+    parentId: fld_75edd8e76aec4e91822ee8796bc6eca5
+    modified: 1590773383218
+    created: 1590772147226
+    url: 0.0.0.0:5555/person/delete/3435645648/
+    name: delete person
+    description: ""
+    method: DELETE
+    body: {}
+    parameters:
+      - description: ""
+        id: pair_bace9cb42c504579983964a2741f8ad3
+        name: assistant_id
+        value: ""
+    headers:
+      - description: ""
+        disabled: true
+        id: pair_6e0549db0f9e4135bd1f41e79b78a529
+        name: Authorization
+        value: JWT
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZtYXJxdWV6QGdsb2JhbHV5LmNvbSIsIm9yaWdfaWF0IjoxNTg2OTc3MjEzLCJ1c2VyX2lkIjozMzksImVtYWlsIjoiZm1hcnF1ZXpAZ2xvYmFsdXkuY29tIiwiZXhwIjoxNTg2OTgwODEzfQ.wkXazYosyCQVHglbm7yV2XGgi4K-KYRFI0qE52W9Odk
+    authentication: {}
+    metaSortKey: -1587687605353.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_748b7a10643342c3bfa6e849a309a471
+    parentId: fld_75edd8e76aec4e91822ee8796bc6eca5
+    modified: 1590789864989
+    created: 1590787948036
+    url: 0.0.0.0:5555/schedules/clean/111/
+    name: clean schedules
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - description: ""
+        id: pair_99ad905b6c544c849c8c48f6b07866a1
+        name: "26074"
+        value: ""
+    authentication: {}
+    metaSortKey: -1588843869449
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_edbd9b80e7f84e27b69b301a100bc91c
+    parentId: fld_75edd8e76aec4e91822ee8796bc6eca5
+    modified: 1622561921086
+    created: 1621873535313
+    url: http://padrones.grupobasa.com.ar/api/padron/32378830
+    name: padrones BASA
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1621873535313
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_dad8c998da734301866508bc6fcd2be0
+    parentId: fld_a1b416e9ea8a4bb8838b6c26565d80fa
+    modified: 1591203053762
+    created: 1591203053762
+    url: https://soporteuc.isbel.com.uy/Integra/resources/Dialers/RemoveScheduleDialerCall?campaign=ST1_Dialer->&destination=099082992&from=2020-05-19
+      00:00:00&to=2020-05-20 00:00:00
+    name: RemoveScheduleDialerCall
+    description: ""
+    method: POST
+    body: {}
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+      - name: Authorization
+        value: Basic QWRtaW46N2I4MGYyYjMtMGM4Ni00ODFkLTk5MzEtOTk3ZTYzNzk4Mzgy
+    authentication: {}
+    metaSortKey: -1591203053762
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_a1b416e9ea8a4bb8838b6c26565d80fa
+    parentId: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    modified: 1591203055311
+    created: 1591203055311
+    name: API Dialers
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1591203055311
+    _type: request_group
+  - _id: req_a92def9c0a6d4109902c9e78a9d0d277
+    parentId: fld_a1b416e9ea8a4bb8838b6c26565d80fa
+    modified: 1591203456199
+    created: 1591203053770
+    url: https://isbelpublic.ucontactcloud.com:7443/Integra/resources/Dialers/ScheduleDialerCall
+    name: ScheduleDialerCall
+    description: ""
+    method: POST
+    body: {}
+    parameters:
+      - id: pair_637c541497c04e78b888d72619b482aa
+        multiline: false
+        name: callschedule
+        type: text
+        value: '{"calldate" : "2020-05-21 17:15:00", "campaign"
+          :"CitaTelefonica->","destination" : "099082992","alternatives" :
+          "","agentphone" : "","data" :  "link=https://doctari.com.uy"}'
+    headers:
+      - id: pair_f27d771cc0ab4566be7e93be8e50f788
+        name: Authorization
+        value: Basic ZG9jdGFyaTo5MGFhZjdjMi05ZjY2LTRmZWItYTU5Zi0xNmVjNTI1YTg1OWQ=
+      - disabled: false
+        id: pair_7de7f4a4d65043af8e257f900e0351ee
+        name: Content-Type
+        value: application/x-www-form-urlencoded
+    authentication: {}
+    metaSortKey: -1591203053770
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_ae3293186314455e9f57f950d64d76d2
+    parentId: fld_eceec8ed8f0d40fcbebe9e9f3979c28e
+    modified: 1621472702592
+    created: 1620760040114
+    url: "{{ _.DEV_API }}/casa_galicia/appointment/3547553/"
+    name: create appointment
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        	{
+        		"reason": "primer prueba calendar",
+        		"date": "2021-05-22 09:50",
+        		"doctor_identity": 47192747,
+        		"patient_identity": 20347592,
+        		"appointment_type": "video",
+        		"amount": 50.00,
+        		"magic_order_id": 12345,
+        		"patient_name": "fausto fff",
+        		"patient_phone": 12343245
+        	}
+    parameters: []
+    headers:
+      - id: pair_03ccd55d829840808b44270cd40812ea
+        name: Content-Type
+        value: application/json
+      - description: ""
+        disabled: false
+        id: pair_3a68d1b9be0241c9b02790087f495cb7
+        name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: true
+      username: ""
+      password: ""
+    metaSortKey: -1586531341119.4375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_eceec8ed8f0d40fcbebe9e9f3979c28e
+    parentId: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    modified: 1623070855733
+    created: 1620760032414
+    name: Galicia
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1603423984313.5
+    _type: request_group
+  - _id: req_26f6e66f7b57444fb92a52f6fef5be07
+    parentId: fld_eceec8ed8f0d40fcbebe9e9f3979c28e
+    modified: 1621343838144
+    created: 1621274038018
+    url: localhost:5555/casa_galicia/payment_done/
+    name: Payment done
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"magic_order_id": 1258,
+        	"amount": 200.20
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_be5c8589b5a74d6e8f17b239f1e69886
+      - name: Authorization
+        value: "Doctari-Api-Key: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ"
+        description: ""
+        id: pair_c62071e195784155b89ef29a679dbfa9
+    authentication:
+      type: bearer
+      prefix: Doctari-Api-Key
+      token: J70mmA5D8sLyj2PnTOyLRrMHNQBYOlvSoKZopEKJ
+    metaSortKey: -1621274038018
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_937813f6674e4f75bce7ffb548436430
+    parentId: fld_81698e6ec43243f78de357d4afa148cd
+    modified: 1623163062325
+    created: 1623070752531
+    url: http://localhost:5555/expertise/appointment/
+    name: Create appointment
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "user":
+            {
+                "first_name":"Juan",
+                "last_name":"Perez",
+                "identity_document": "40188089",
+                "telephone": "12345678",
+                "email": "juan@mail.com",
+                "reason": "1"
+            },
+            "proficient_id": "441",
+            "date": "2021-06-09 16:00:00"
+        }
+    parameters: []
+    headers:
+      - name: Authorization
+        value: JWT
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InByb2ZpY2llbnRfdGVzdEBkb2N0YXJpLmNvbSIsIm9yaWdfaWF0IjoxNjIzMDcxNjU0LCJ1c2VyX2lkIjo0NDEsImVtYWlsIjoicHJvZmljaWVudF90ZXN0QGRvY3RhcmkuY29tIiwiZXhwIjoxNjIzMDc1MjU0fQ.f58_kR5qXZA-XR2yYu2rDfJMhGD0XL7hugZa9n2qSvI
+        id: pair_1a1918ac6c12446e90e5112849299106
+      - name: Content-Type
+        value: application/json
+        id: pair_3807e78142644afd97490ed05055a951
+    authentication: {}
+    metaSortKey: -1623070752531
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_81698e6ec43243f78de357d4afa148cd
+    parentId: fld_f11125ba5dc34507968d0711efb536ee
+    modified: 1623070707613
+    created: 1623070707613
+    name: Expertise
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1623070707613
+    _type: request_group
+  - _id: fld_f11125ba5dc34507968d0711efb536ee
+    parentId: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    modified: 1623070868296
+    created: 1623070689776
+    name: Mapfre
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1609534448814.75
+    _type: request_group
+  - _id: req_78c8313c822b48cb9ddc14cea5fe1e19
+    parentId: fld_81698e6ec43243f78de357d4afa148cd
+    modified: 1623160068323
+    created: 1623160058760
+    url: http://localhost:5555/expertise/appointment/
+    name: Get appointments
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Authorization
+        value: JWT
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InByb2ZpY2llbnRfdGVzdEBkb2N0YXJpLmNvbSIsIm9yaWdfaWF0IjoxNjIzMDcxNjU0LCJ1c2VyX2lkIjo0NDEsImVtYWlsIjoicHJvZmljaWVudF90ZXN0QGRvY3RhcmkuY29tIiwiZXhwIjoxNjIzMDc1MjU0fQ.f58_kR5qXZA-XR2yYu2rDfJMhGD0XL7hugZa9n2qSvI
+        id: pair_1a1918ac6c12446e90e5112849299106
+      - name: Content-Type
+        value: application/json
+        id: pair_3807e78142644afd97490ed05055a951
+    authentication: {}
+    metaSortKey: -1623070721178.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_24cf9b7e10545b6c4b7c3940088de730b967d2c3
+    parentId: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    modified: 1584629408362
+    created: 1584629408362
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1584629408362
+    _type: environment
+  - _id: jar_24cf9b7e10545b6c4b7c3940088de730b967d2c3
+    parentId: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    modified: 1611606082053
+    created: 1584629408373
+    name: Default Jar
+    cookies:
+      - key: ASP.NET_SessionId
+        value: f15hvmv5nym5kjjn0tx1wogh
+        domain: orqdesa.casmu.com
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-05-12T15:54:07.837Z
+        lastAccessed: 2020-05-12T15:54:07.837Z
+        id: "07661919894647973"
+      - key: GX_CLIENT_ID
+        value: 68afc6fe-427a-4fd7-bd66-ac78d64f6036
+        expires: 9999-12-31T23:59:59.000Z
+        domain: orqdesa.casmu.com
+        path: /appmovil/oauth
+        httpOnly: true
+        hostOnly: true
+        pathIsDefault: true
+        creation: 2020-05-12T15:54:07.840Z
+        lastAccessed: 2020-05-12T15:54:07.840Z
+        id: "4833609668027179"
+      - key: ASP.NET_SessionId
+        value: abeiz4005dhthn0eibxioosh
+        domain: orq.casmu.com
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2021-01-25T13:48:35.879Z
+        lastAccessed: 2021-01-25T13:48:35.880Z
+        id: "259779473126456"
+      - key: GX_CLIENT_ID
+        value: a07ef1ee-3121-43bf-b90a-4c5eca58ea09
+        expires: 9999-12-31T23:59:59.000Z
+        domain: orq.casmu.com
+        path: /casmucerca-v2/oauth
+        httpOnly: true
+        hostOnly: true
+        pathIsDefault: true
+        creation: 2021-01-25T13:48:35.882Z
+        lastAccessed: 2021-01-25T13:48:35.882Z
+        id: "14290358017055182"
+      - key: ROUTEID
+        value: ".2"
+        domain: orq.casmu.com
+        path: /casmucerca/
+        hostOnly: true
+        creation: 2021-01-25T13:48:35.882Z
+        lastAccessed: 2021-01-25T13:48:35.882Z
+        id: "11024969544972119"
+      - key: ROUTEID
+        value: ".2"
+        domain: orq.casmu.com
+        path: /casmucerca-v2/
+        hostOnly: true
+        creation: 2021-01-25T13:48:35.886Z
+        lastAccessed: 2021-01-25T13:48:35.886Z
+        id: "5357991091554763"
+      - key: ASP.NET_SessionId
+        value: oolmag0ognvaktlecaqd5thi
+        domain: orqprep.casmu.com
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2021-01-25T20:21:22.047Z
+        lastAccessed: 2021-01-25T20:21:22.047Z
+        id: "7473080355497175"
+      - key: GX_CLIENT_ID
+        value: 46d9eb6a-9f60-485c-aafc-5d4baef0de6e
+        expires: 9999-12-31T23:59:59.000Z
+        domain: orqprep.casmu.com
+        path: /casmucerca-v2/oauth
+        httpOnly: true
+        hostOnly: true
+        pathIsDefault: true
+        creation: 2021-01-25T20:21:22.051Z
+        lastAccessed: 2021-01-25T20:21:22.051Z
+        id: "479785954912463"
+    _type: cookie_jar
+  - _id: spc_85df79eae9434f7d8af68f162c549514
+    parentId: wrk_bc59bdd446a744bd9dd5b6eb0196b690
+    modified: 1611582363669
+    created: 1611582363669
+    fileName: Doctari
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_342cda95cd7a425d95ea12b3d7b8e635
+    parentId: env_24cf9b7e10545b6c4b7c3940088de730b967d2c3
+    modified: 1621472571169
+    created: 1615557054520
+    name: Doctari env
+    data:
+      DEV_API: localhost:5555
+      ASE_API: https://backend-testasse.doctari.com
+      CASMU_API: https://backend-casmu.doctari.com
+      CASMU_API_TEST: https://backend-testcasmu.doctari.com
+    dataPropertyOrder:
+      "&":
+        - DEV_API
+        - ASE_API
+        - CASMU_API
+        - CASMU_API_TEST
+    color: "#e3bf5f"
+    isPrivate: false
+    metaSortKey: 1615557054520
+    _type: environment
