@@ -31,6 +31,9 @@ class Membership(models.Model):
         max_length=150, null=True, blank=True)
     active = models.BooleanField(default=True)
 
+    # the last company the user used in the app
+    last_used = models.BooleanField(default=False)
+
     class Meta:
         unique_together = ('company', 'user')
 

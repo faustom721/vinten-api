@@ -8,12 +8,9 @@ class CustomUser(AbstractUser):
     phone = models.IntegerField(null=True)
     ci = models.CharField(max_length=30, unique=True)
 
-    last_used_company = models.ForeignKey(
-        'companies.Company', on_delete=models.SET_NULL, null=True)
-
     USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['first_name, last_name',
-                       'email', 'password', 'ci']
+    # REQUIRED_FIELDS = ['first_name, last_name',
+    #                    'email', 'password', 'ci']
 
     objects = CustomUserManager()
 
