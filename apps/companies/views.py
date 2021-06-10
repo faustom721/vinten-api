@@ -17,7 +17,7 @@ class MembershipViewSet(viewsets.ModelViewSet):
     serializer_class = MembershipSerializer
 
     def get_queryset(self):
-        return Membership.objects.filter(user=self.request.user, active=True)
+        return Membership.objects.filter(user=self.request.user, is_active=True)
 
 
 class ClientViewSet(viewsets.ModelViewSet):

@@ -11,7 +11,7 @@ class Company(models.Model):
     members = models.ManyToManyField(
         'people.CustomUser', through='Membership')
 
-    active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         verbose_name_plural = 'Companies'
@@ -29,7 +29,7 @@ class Membership(models.Model):
     role = models.PositiveSmallIntegerField(choices=ROLE_CHOICES)
     activity_description = models.CharField(
         max_length=150, null=True, blank=True)
-    active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
 
     # the last company the user used in the app
     last_used = models.BooleanField(default=False)

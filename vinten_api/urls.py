@@ -7,7 +7,7 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt import views as jwt_views
 
 from apps.people.serializers import CustomJWTSerializer
-from apps.people.urls import router as people_router
+from apps.people.urls import urls as people_urls
 from apps.companies.urls import router as companies_router
 
 admin.site.site_header = "Vinten Admin"
@@ -23,7 +23,7 @@ urlpatterns = [
          name='token_obtain_pair'),
     path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 
-    path('', include(people_router.urls)),
+    path('', include(people_urls)),
     path('', include(companies_router.urls)),
 ]
 

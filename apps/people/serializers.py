@@ -2,6 +2,7 @@ from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 from apps.people.models import CustomUser
+from apps.companies.models import Membership
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -12,10 +13,13 @@ class UserSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def get_last_used_company(self, obj):
-        if not obj.last_used_company:
-            return obj.memberships.first().company.pk
+        last_used_company = Membership.objects.filter(
+            user=obj, last_used=True).select_related('company').first()
+
+        if not last_used_company:
+            return None
         else:
-            return obj.last_used_company
+            return last_used_company.pk
 
 
 class SimpleUserSerializer(serializers.ModelSerializer):
