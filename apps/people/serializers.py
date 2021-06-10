@@ -28,7 +28,7 @@ class SimpleUserSerializer(serializers.ModelSerializer):
 class UserRegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ['username', 'ci', 'email', 'first_name', 'last_name',
+        fields = ['username', 'ci', 'email', 'first_name', 'last_name', 'phone',
                   'password']
         extra_kwargs = {
             'password': {
@@ -37,7 +37,6 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         }
 
     def save(self):
-        print(self.validated_data.get('ci'))
         user = CustomUser.objects.create_user(
             username=self.validated_data.get('username'),
             ci=self.validated_data.get('ci'),
@@ -45,7 +44,8 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
             last_name=self.validated_data.get('last_name'),
             password=self.validated_data.get('password'),
             email=self.validated_data.get('email'),
-            phone=self.validated_data.get('phone')
+            phone=self.validated_data.get('phone'),
+            is_active=False
         )
 
 
