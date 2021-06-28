@@ -2,13 +2,6 @@ from rest_framework import serializers
 from apps.transactions.models import ExternalEntity, Income, Outcome
 
 
-class ExternalEntitySerializer(serializers.ModelSerializer):
-
-    class Meta(object):
-        model = ExternalEntity
-        fields = '__al__'
-
-
 class IncomeSerializer(serializers.ModelSerializer):
 
     class Meta(object):

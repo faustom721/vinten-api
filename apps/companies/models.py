@@ -52,7 +52,7 @@ class ExternalEntity(models.Model):
 
     name = models.CharField(max_length=80)
     identity_document = models.IntegerField(unique=True)
-    name = models.EmailField()
+    email = models.EmailField(null=True, blank=True)
     phone = models.CharField(max_length=50, null=True, blank=True)
     kind = models.CharField(max_length=7, choices=KIND_CHOICES, default=PERSON)
 
