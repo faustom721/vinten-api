@@ -4,7 +4,8 @@ from django.urls import path
 from apps.people import views
 
 
-router = DefaultRouter()
+router = DefaultRouter(trailing_slash=False)
+
 router.register(r'users', views.UserViewSet)
 router.register(r'me',
                 views.CurrentUserViewSet, basename='current_user')
