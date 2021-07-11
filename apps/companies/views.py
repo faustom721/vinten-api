@@ -3,7 +3,6 @@ from rest_framework import viewsets
 from apps.companies import serializers
 from apps.companies.models import Company, Membership, Client
 from apps.companies.serializers import CompanySerializer, MembershipSerializer, ExternalEntitySerializer
-from utils import get_request_company
 
 
 class CompanyViewSet(viewsets.ModelViewSet):
@@ -26,5 +25,5 @@ class ClientViewSet(viewsets.ModelViewSet):
     serializer_class = ExternalEntitySerializer
 
     def get_queryset(self):
-        company = get_request_company(self.request)
-        return Client.objects.filter(company=company)
+        # company_id is a path param of this endpoint
+        return Client.objects.filter(company=self.kwargs.get('company_id'))

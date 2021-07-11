@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2021-05-20T01:24:35.823Z
+__export_date: 2021-07-11T05:43:41.801Z
 __export_source: insomnia.desktop.app:v2021.3.0
 resources:
   - _id: req_29fe55f03ca0464387bd1d19c7f9ad1c
     parentId: fld_c62bd2963fff488b9d422c2bd8e4551a
-    modified: 1621473870090
+    modified: 1621552008753
     created: 1618881122069
     url: "{{ _.API_URL }}/me/"
     name: Get current user
@@ -17,7 +17,7 @@ resources:
     authentication:
       type: bearer
       prefix: ""
-      token: "{% apitoken '.*(localhost).*/(login)', 'accessToken' %}"
+      token: "{% apitoken _.AccessTokenURL, 'access' %}"
       disabled: false
     metaSortKey: -1618976718576
     isPrivate: false
@@ -48,7 +48,7 @@ resources:
     _type: workspace
   - _id: req_772525a99a254e269559f26c4f37e449
     parentId: fld_c62bd2963fff488b9d422c2bd8e4551a
-    modified: 1621473644820
+    modified: 1623366282829
     created: 1618976718550
     url: "{{AccessTokenURL}}"
     name: Get token
@@ -58,7 +58,7 @@ resources:
       mimeType: application/json
       text: |-
         {
-        	"username": "fausto@mail.com",
+        	"username": "fausto",
         	"password": "12345"
         }
     parameters: []
@@ -103,7 +103,7 @@ resources:
     _type: request
   - _id: req_036c3c38bfd14617a609953ceecd65bf
     parentId: fld_c62bd2963fff488b9d422c2bd8e4551a
-    modified: 1621473859189
+    modified: 1623364567122
     created: 1619060064107
     url: "{{ _.API_URL }}/users/"
     name: Create User
@@ -113,12 +113,13 @@ resources:
       mimeType: application/json
       text: |-
         {
-        	"username": "fausto3",
+        	"username": "fausto",
         	"first_name": "Fausto",
-        	"last_name": "Márquez",
+        	"last_name": "Márquezzzz",
         	"password": "12345",
-        	"ci": "1124",
-        	"email": "fausto3@mail.com"
+        	"ci": "1124456",
+        	"email": "fausto3@mail.com",
+        	"phone": "234234"
         }
     parameters: []
     headers:
@@ -141,9 +142,9 @@ resources:
     _type: request
   - _id: req_9e3329631101483bb99eab0ffd2022ff
     parentId: fld_b859b8ccd35f4a7ab410ca5b7de384c2
-    modified: 1621473834004
+    modified: 1623021759111
     created: 1618977923577
-    url: "{{API_URL}}/memberships/"
+    url: "{{API_URL}}/companies/memberships/"
     name: Get my memberships
     description: ""
     method: GET
@@ -176,7 +177,7 @@ resources:
     _type: request_group
   - _id: req_575bdc0db12245f288212c6b6fd0de58
     parentId: fld_b859b8ccd35f4a7ab410ca5b7de384c2
-    modified: 1621473843456
+    modified: 1624386584170
     created: 1618978251343
     url: "{{ _.API_URL }}/companies/"
     name: Create Company
@@ -234,6 +235,70 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_a49f690823c240799270e42b80a7a170
+    parentId: fld_b859b8ccd35f4a7ab410ca5b7de384c2
+    modified: 1625981763332
+    created: 1623020725799
+    url: "{{ _.API_URL }}/3/clients/"
+    name: Get clients
+    description: Get all external entities for the current logged in user's company.
+      A company's clients, that can be people or other companies
+    method: GET
+    body: {}
+    parameters:
+      - name: company
+        value: "2"
+        description: ""
+        id: pair_7eb5dac0eff54dfb8a82ed30c141cb1e
+    headers: []
+    authentication:
+      type: bearer
+      prefix: ""
+      token: "{% apitoken _.AccessTokenURL, 'access' %}"
+      disabled: false
+    metaSortKey: -1618283000684.4375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_effa6df62c0243e2ba65b0f35c4f1558
+    parentId: fld_b859b8ccd35f4a7ab410ca5b7de384c2
+    modified: 1623367267599
+    created: 1623367213675
+    url: "{{ _.API_URL }}/set_last_used_company/"
+    name: Set last used company
+    description: Get all external entities for the current logged in user's company.
+      A company's clients, that can be people or other companies
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"company": 1
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_b463446bdf6747058eff628da80cb7f5
+    authentication:
+      type: bearer
+      prefix: ""
+      token: "{% apitoken '.*(localhost).*/(login)', 'accessToken' %}"
+      disabled: false
+    metaSortKey: -1618259876754.7188
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: env_35fe8e54de578a9b299e359486dae31432f5b83a
     parentId: wrk_056792c6a39e45da8b1c288bec5a201d
     modified: 1610206556334
@@ -274,12 +339,12 @@ resources:
     _type: api_spec
   - _id: env_a9ed2a1a76aa422895681832161e15a4
     parentId: env_35fe8e54de578a9b299e359486dae31432f5b83a
-    modified: 1621473824638
+    modified: 1625955579277
     created: 1618881000793
     name: Development
     data:
       API_URL: http://localhost:8000
-      AccessTokenURL: "{{ _.API_URL }}token/"
+      AccessTokenURL: "{{ _.API_URL }}/token/"
     dataPropertyOrder:
       "&":
         - API_URL

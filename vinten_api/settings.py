@@ -78,6 +78,8 @@ REST_FRAMEWORK = {
         # this makes that by default every view has "IsAuthenticated" class as its permissions_class
         'rest_framework.permissions.IsAuthenticated',
     ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 25
 }
 
 
