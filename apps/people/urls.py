@@ -11,5 +11,6 @@ router.register(r'me',
                 views.CurrentUserViewSet, basename='current_user')
 
 urls = [
+    # get and set user's last used company
     path('set_last_used_company/', views.SetLastUsedCompanyView.as_view()),
 ] + router.urls

@@ -38,7 +38,9 @@ class CurrentUserViewSet(viewsets.ReadOnlyModelViewSet):
 
 class SetLastUsedCompanyView(APIView):
 
-    def post(self, request):
+    def put(self, request):
+        """ Sets a company as the last used by the logged in user, setting last_used=True in the corresponding membership instance. """
+
         company = request.data.get('company')
         # set the corresponding membership (the user-company relationship) to last_used=true
         membership = Membership.objects.filter(
@@ -49,4 +51,4 @@ class SetLastUsedCompanyView(APIView):
             membership.save()
             return Response(status=200)
         else:
-            return Response(status=404)
+            return Response({'msg': 'No membership found.'}, status=404)

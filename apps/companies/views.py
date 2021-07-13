@@ -13,6 +13,8 @@ class CompanyViewSet(viewsets.ModelViewSet):
 class MembershipViewSet(viewsets.ModelViewSet):
     """ Logged in user's memberships """
 
+    # turn off pagination
+    pagination_class = None
     serializer_class = MembershipSerializer
 
     def get_queryset(self):
